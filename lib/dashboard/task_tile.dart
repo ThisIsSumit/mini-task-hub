@@ -37,7 +37,7 @@ class TaskTile extends StatelessWidget {
           width: 1,
         ),
       ),
-      color: const Color.fromARGB(255, 255, 255, 255),
+
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
         child: Column(

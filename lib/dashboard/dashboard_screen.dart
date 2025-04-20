@@ -178,7 +178,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 60, 66, 68),
+      // backgroundColor: const Color.fromARGB(255, 60, 66, 68),
       appBar: AppBar(
         title: const Text(
           'TaskHub',
