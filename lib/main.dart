@@ -6,14 +6,16 @@ import 'package:mini_taskhub/auth/signup_screen.dart';
 import 'package:mini_taskhub/dashboard/dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await dotenv.load(fileName: ".env");
+
   await Supabase.initialize(
-    url: 'https://ygxjrzgxzyysqtrrdcib.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlneGpyemd4enl5c3F0cnJkY2liIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUxMjQwOTIsImV4cCI6MjA2MDcwMDA5Mn0.3UjSn9tEg1XyaqKoEbbkWqMTD9tyHUW_kLYjL3sWbd4',
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
 
   runApp(
