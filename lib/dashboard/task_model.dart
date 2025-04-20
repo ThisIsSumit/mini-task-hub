@@ -29,7 +29,10 @@ class Task {
       'user_id': userId,
       'title': title,
       'status': status,
-      'created_at': createdAt.toIso8601String(),
+      'created_at': createdAt.toUtc().toIso8601String().replaceFirst(
+        '.000Z',
+        'Z',
+      ),
     };
   }
 }
