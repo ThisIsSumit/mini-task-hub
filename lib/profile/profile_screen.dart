@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:mini_taskhub/auth/auth_service.dart';
 import 'package:mini_taskhub/auth/profile_model.dart';
 import 'package:mini_taskhub/services/supabase_service.dart';

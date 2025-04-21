@@ -52,7 +52,12 @@ class SupabaseService extends ChangeNotifier {
         })
         .eq('id', id);
   }
-
+Future<void> updateTask(String id, String text) async {
+    await _supabase
+        .from('tasks')
+        .update({'title': text, 'updated_at': DateTime.now().toIso8601String()})
+        .eq('id', id);
+  }
   Future<void> addUser(String userId, String email, String fullName) async {
     print("user name : ${fullName}");
     try {

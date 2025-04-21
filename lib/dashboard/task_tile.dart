@@ -102,113 +102,13 @@ class TaskTile extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            DateFormat(
-                              'MMM dd, yyyy • hh:mm a',
-                            ).format(task.createdAt),
-                            style: TextStyle(fontSize: 12, color: Colors.black),
-                          ),
-                        ),
                       ],
                     ),
                   ],
                 ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.more_vert, color: Colors.black),
-                  onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      backgroundColor:
-                          isDarkMode ? Colors.grey[900] : Colors.white,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(20),
-                        ),
-                      ),
-                      builder:
-                          (context) => Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                if (onEdit != null)
-                                  ListTile(
-                                    leading: const Icon(
-                                      Icons.edit,
-                                      color: Colors.blue,
-                                    ),
-                                    title: const Text('Edit Task'),
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                      onEdit!();
-                                    },
-                                  ),
-                                ListTile(
-                                  leading: Icon(
-                                    isCompleted
-                                        ? Icons.unpublished
-                                        : Icons.task_alt,
-                                    color:
-                                        isCompleted
-                                            ? Colors.orange
-                                            : Colors.green,
-                                  ),
-                                  title: Text(
-                                    isCompleted
-                                        ? 'Mark as Pending'
-                                        : 'Mark as Completed',
-                                  ),
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                    onToggleStatus();
-                                  },
-                                ),
-                                ListTile(
-                                  leading: const Icon(
-                                    Icons.delete,
-                                    color: Colors.red,
-                                  ),
-                                  title: const Text('Delete Task'),
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                    showDialog(
-                                      context: context,
-                                      builder:
-                                          (context) => AlertDialog(
-                                            title: const Text('Delete Task'),
-                                            content: const Text(
-                                              'Are you sure you want to delete this task?',
-                                            ),
-                                            actions: [
-                                              TextButton(
-                                                onPressed:
-                                                    () =>
-                                                        Navigator.pop(context),
-                                                child: const Text('CANCEL'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-                                                  onDelete();
-                                                },
-                                                child: const Text(
-                                                  'DELETE',
-                                                  style: TextStyle(
-                                                    color: Colors.red,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                    );
-                  },
+                trailing: Text(
+                  DateFormat('MMM dd, yyyy\nhh:mm a').format(task.createdAt),
+                  style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
               ),
             ),

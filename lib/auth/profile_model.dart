@@ -1,4 +1,3 @@
-// TODO Implement this library.
 class AppUser {
   final String id;
   final String email;

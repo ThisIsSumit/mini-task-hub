@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mini_taskhub/auth/auth_service.dart';
-import 'package:mini_taskhub/services/supabase_service.dart';
 import 'package:provider/provider.dart';
 
 class SignupScreen extends StatefulWidget {

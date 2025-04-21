@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:mini_taskhub/auth/auth_service.dart';
 import 'package:mini_taskhub/dashboard/task_model.dart';
 import 'package:mini_taskhub/dashboard/task_tile.dart';
@@ -75,10 +76,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   }
 
   Future<void> _updateTask(String id, String text) async {
-    await _supabase
-        .from('tasks')
-        .update({'title': text, 'updated_at': DateTime.now().toIso8601String()})
-        .eq('id', id);
+    await _supabaseService.updateTask(id, text);
   }
 
   Future<void> _deleteTask(String id) async {
