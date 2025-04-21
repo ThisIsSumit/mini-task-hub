@@ -2,7 +2,8 @@
 A beautiful Flutter task management app with Supabase backend.
 
 
-
+![Image](https://github.com/user-attachments/assets/29e80cad-97ea-44ab-b895-1b7cd7e9b129)
+![Image](https://github.com/user-attachments/assets/f5c386e9-3881-4b2e-be96-a39541ee3452)
 
 ## Features
 - ✅ User authentication (Login/Signup)
