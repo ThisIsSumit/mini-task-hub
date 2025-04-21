@@ -88,7 +88,7 @@ flutter run
 - [intl](https://pub.dev/packages/intl) - Date formatting
 
 ## Demo
-https://youtu.be/HZawmWQ6OVY
+https://youtu.be/MLcN8VOfit8
 
 - Complete Supabase setup guide
 - Development tips specific to this project
