@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:mini_taskhub/dashboard/task_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uuid/uuid.dart';
 
-class SupabaseService {
+class SupabaseService extends ChangeNotifier {
   static final SupabaseService _instance = SupabaseService._internal();
   factory SupabaseService() => _instance;
   SupabaseService._internal();
@@ -44,12 +45,35 @@ class SupabaseService {
   }
 
   Future<void> toggleTaskStatus(String id, String currentStatus) async {
-    
     await _supabase
         .from('tasks')
         .update({
           'status': currentStatus == 'pending' ? 'completed' : 'pending',
         })
         .eq('id', id);
+  }
+
+  Future<void> addUser(String userId, String email, String fullName) async {
+    print("user name : ${fullName}");
+    try {
+      await _supabase.from('profiles').insert({
+        'id': userId,
+        'email': email,
+        'full_name': fullName,
+        'created_at': DateTime.now().toIso8601String(),
+      });
+    } catch (e) {
+      print("Failed to add user $e");
+    }
+  }
+
+  Future<Map<String, dynamic>?> getUserProfile() async {
+    final userId = _supabase.auth.currentUser?.id;
+    if (userId == null) return null;
+
+    final response =
+        await _supabase.from('profiles').select().eq('id', userId).single();
+
+    return response;
   }
 }

@@ -1,20 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:mini_taskhub/services/supabase_service.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthService extends ChangeNotifier {
   final _supabase = Supabase.instance.client;
 
-  Future<String?> signUp(String email, String password) async {
+  Future<String?> signUp(String email, String password, String fullName) async {
     try {
       final response = await _supabase.auth.signUp(
         email: email,
         password: password,
       );
+      await SupabaseService().addUser(response.user!.id, email, fullName);
       return response.user?.id;
     } catch (e) {
-      throw Exception('Signup failed: $e');
+      print('Signup failed: $e');
     }
   }
 

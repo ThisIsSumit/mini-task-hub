@@ -183,13 +183,11 @@ class _DashboardScreenState extends State<DashboardScreen>
         title: const Text(
           'TaskHub',
         ).animate().fadeIn(duration: 600.ms).slideX(begin: -0.2, end: 0),
+        
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout, color: Colors.white),
-            onPressed: () {
-              Provider.of<AuthService>(context, listen: false).logout();
-              Navigator.pushReplacementNamed(context, '/login');
-            },
+            icon: const Icon(Icons.person, color: Colors.white),
+            onPressed: () => Navigator.pushNamed(context, '/profile'),
           ).animate().fadeIn(delay: 200.ms, duration: 400.ms),
         ],
       ),

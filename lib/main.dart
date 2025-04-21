@@ -4,6 +4,7 @@ import 'package:mini_taskhub/auth/auth_service.dart';
 import 'package:mini_taskhub/auth/login_screen.dart';
 import 'package:mini_taskhub/auth/signup_screen.dart';
 import 'package:mini_taskhub/dashboard/dashboard_screen.dart';
+import 'package:mini_taskhub/profile/profile_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/profile': (context) => const ProfileScreen(),
       },
     );
   }
