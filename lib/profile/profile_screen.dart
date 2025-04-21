@@ -124,17 +124,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
       decoration: BoxDecoration(
-        color: const Color(0xFF2A3038),
+        color: const Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
-          Icon(iconData, color: Colors.white70, size: 20),
+          Icon(iconData, color: const Color.fromARGB(179, 0, 0, 0), size: 20),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(color: Colors.white, fontSize: 15),
+              style: const TextStyle(
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontSize: 15,
+              ),
             ),
           ),
           IconButton(
@@ -153,14 +156,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(195, 54, 54, 54),
+        color: const Color.fromARGB(195, 255, 255, 255),
       ),
       child: ListTile(
         title: Text(
           _user?.fullName ?? '',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
-        leading: Icon(Icons.email_outlined, color: Colors.white),
+        leading: Icon(Icons.person_outlined, color: Colors.black),
       ),
     );
   }
@@ -170,11 +173,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(195, 54, 54, 54),
+        color: const Color.fromARGB(195, 255, 255, 255),
       ),
       child: ListTile(
-        title: Text(_user?.email ?? '', style: TextStyle(color: Colors.white)),
-        leading: Icon(Icons.email_outlined, color: Colors.white),
+        title: Text(
+          _user?.email ?? '',
+          style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+        ),
+        leading: Icon(
+          Icons.email_outlined,
+          color: const Color.fromARGB(255, 0, 0, 0),
+        ),
       ),
     );
   }
