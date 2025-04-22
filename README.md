@@ -6,7 +6,7 @@ A beautiful Flutter task management app with Supabase backend.
   <img src="https://github.com/user-attachments/assets/ffbe7dd1-2bb9-45f2-ae51-b2465b658d9f" width="250" />
   <img src="https://github.com/user-attachments/assets/29e80cad-97ea-44ab-b895-1b7cd7e9b129" width="250" />
   <img src="https://github.com/user-attachments/assets/f5c386e9-3881-4b2e-be96-a39541ee3452" width="250" />
-  <img src="https://github.com/user-attachments/assets/4cee9423-d0ed-438e-beff-8968c65f3244" width="250" />
+  <img src="https://github.com/user-attachments/assets/aafac0d9-3ccf-4072-a45c-560b24eab975" width="250" />
 </p>
 
 
